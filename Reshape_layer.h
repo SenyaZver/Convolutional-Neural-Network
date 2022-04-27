@@ -39,9 +39,6 @@ public:
 
 
 
-
-
-
 	std::vector<double> propagate(std::vector<std::vector<double>> const input) {
 		this->inputLayer = input;
 		return this->reshape();

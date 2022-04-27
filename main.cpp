@@ -33,36 +33,38 @@ int main() {
 	//init input
 	auto input = createMatrix(3);
 	input[0][0] = 1;
-	input[0][1] = 6;
-	input[0][2] = 2;
+	input[0][1] = 1;
+	input[0][2] = 1;
 
-	input[1][0] = 5;
-	input[1][1] = 3;
+	input[1][0] = 1;
+	input[1][1] = 2;
 	input[1][2] = 1;
 
-	input[2][0] = 7;
-	input[2][1] = 0;
-	input[2][2] = 4;
-
-	//init filter
-	auto filter = createMatrix(2);
-	filter[0][0] = 1;
-	filter[0][1] = 2;
-
-	filter[1][0] = -1;
-	filter[1][1] = 0;
+	input[2][0] = 1;
+	input[2][1] = 2;
+	input[2][2] = 2;
 
 
 
-	Convoluted_layer test(filter);
+	Convoluted_layer test(2, 3);
 
-	auto result = test.propagate(input);
-
-
+	auto result = test.propagate(input, input, input);
+	
+	std::cout <<"propagating once" << std::endl << std::endl;;
 	printMatrix(result);
 
-	Reshape_layer test1(result);
-	
-	print(test1.propagate());
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	test.mutate(1, 100);
+
+	result = test.propagate(input, input, input);
+
+	std::cout << "mutating and propagating again" << std::endl << std::endl;;
+	printMatrix(result);
+
+
 
 }
