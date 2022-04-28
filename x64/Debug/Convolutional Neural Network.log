@@ -3,4 +3,5 @@ C:\Users\Sashk\source\repos\Convolutional Neural Network\Convolutional Neural Ne
 C:\Users\Sashk\source\repos\Convolutional Neural Network\Convolutional Neural Network\Convolutional_layer.h(45,108): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
 C:\Users\Sashk\source\repos\Convolutional Neural Network\Convolutional Neural Network\Convolutional_layer.h(78,61): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
 C:\Users\Sashk\source\repos\Convolutional Neural Network\Convolutional Neural Network\Convolutional_layer.h(122,59): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+C:\Users\Sashk\source\repos\Convolutional Neural Network\Convolutional Neural Network\Dense_layer.h(49,59): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
   Convolutional Neural Network.vcxproj -> C:\Users\Sashk\source\repos\Convolutional Neural Network\x64\Debug\Convolutional Neural Network.exe

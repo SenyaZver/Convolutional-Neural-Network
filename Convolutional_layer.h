@@ -24,8 +24,6 @@ private:
 	std::vector<std::vector<double>> bias;
 
 
-
-
 private:
 
 	double getRandomNumber(double begin, double end) {
@@ -89,9 +87,9 @@ private:
 	void randomInit() {
 		for (size_t i = 0; i < filterSize; i++) {
 			for (size_t j = 0; j < filterSize; j++) {
-				filter1[i][j] = getRandomNumber(0, 2);
-				filter2[i][j] = getRandomNumber(0, 2);
-				filter3[i][j] = getRandomNumber(0, 2);
+				filter1[i][j] = getRandomNumber(-2, 2);
+				filter2[i][j] = getRandomNumber(-2, 2);
+				filter3[i][j] = getRandomNumber(-2, 2);
 				bias[i][j] = getRandomNumber(-6, 0);
 			}
 		}

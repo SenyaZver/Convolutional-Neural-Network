@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Convolutional_layer.h"
 #include "Reshape_layer.h"
+#include "Dense_layer.h"
 
 void printMatrix(std::vector<std::vector<double>> matrix) {
 	size_t size = matrix.size();
@@ -47,23 +48,32 @@ int main() {
 
 
 	Convoluted_layer test(2, 3);
-
 	auto result = test.propagate(input, input, input);
-	
 	std::cout <<"propagating once" << std::endl << std::endl;;
 	printMatrix(result);
 
+	std::cout << std::endl << std::endl;
 
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
 
 	test.mutate(1, 100);
-
 	result = test.propagate(input, input, input);
-
-	std::cout << "mutating and propagating again" << std::endl << std::endl;;
+	std::cout << "mutating and propagating again" << std::endl << std::endl;
 	printMatrix(result);
+
+	std::cout << std::endl << std::endl;
+
+	Reshape_layer rL(4);
+	auto result1 = rL.propagate(result);
+	std::cout << "reshaping" << std::endl << std::endl;
+	print(result1);
+
+	std::cout << std::endl << std::endl;
+
+
+	std::cout << "full dense layer" << std::endl << std::endl;
+	Dense_layer test2(10, 4);
+	auto result2 = test2.propagate(result1);
+	print(result2);
 
 
 
