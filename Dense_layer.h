@@ -37,9 +37,9 @@ private:
 	void randomInit() {
 		for (size_t i = 0; i < 2; i++) {
 			for (size_t j = 0; j < hiddenLayerSize; j++) {
-				hiddenLayer[i][j] = getRandomNumber(-2, 2);
+				hiddenLayer[i][j] = getRandomNumber(-1, 1);
 			}
-			bias[i] = getRandomNumber(-2, 2);
+			bias[i] = getRandomNumber(-1, 1);
 		}
 	}
 
@@ -85,16 +85,20 @@ public:
 
 	}
 
-	void mutate() {
+	void mutate(double weighChangeLimit, int chance) {
 		for (size_t i = 0; i < 2; i++)
 		{
 			for (size_t j = 0; j < hiddenLayerSize; j++)
 			{
-				auto change = getRandomNumber(-1, 1);
-				hiddenLayer[i][j] += change;
+				if (getRandomNumber(0, 100) < chance) {
+					auto change = getRandomNumber(-weighChangeLimit, weighChangeLimit);
+					hiddenLayer[i][j] += change;
+				}
 			}
-			auto change = getRandomNumber(-1, 1);
-			bias[i] += change;
+			if (getRandomNumber(0, 100) < chance) {
+				auto change = getRandomNumber(-weighChangeLimit, weighChangeLimit);
+				bias[i] += change;
+			}
 		}
 	}
 
